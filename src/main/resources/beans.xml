@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- <bean/> definitions here -->
+    <bean name="surveyor,insurancesurveyor" class="com.stackroute.spring.Surveyor">
+        <constructor-arg index="0" value="1"></constructor-arg>
+        <constructor-arg index="1" value="Atul"></constructor-arg>
+    </bean>
+
+    <bean name="surveyor2,insurancesurveyor2" class="com.stackroute.spring.Surveyor">
+        <constructor-arg index="0" value="1"></constructor-arg>
+        <constructor-arg index="1" value="Atul"></constructor-arg>
+    </bean>
+
+
+    <bean id="manager" class="com.stackroute.spring.Manager" autowire="">
+        <property name="id" value="1"></property>
+        <property name="name" value="pushkar"></property>
+       <property name="surveyor" ref="surveyor"></property>
+    </bean>
+    <bean id="manager2" class="com.stackroute.spring.Manager">
+        <property name="id" value="1"></property>
+        <property name="name" value="pushkar"></property>
+        <property name="surveyor" ref="surveyor"></property>
+    </bean>
+
+</beans>
